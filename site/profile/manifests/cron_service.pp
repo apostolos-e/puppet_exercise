@@ -1,10 +1,20 @@
 class profile::cron_service{
   include cron
-  $run = 'absent' #absent or present
+  include vcsrepo
+  
+  $run = 'absent' #absent or present / start or stop the cron service
+  
+  vcsrepo { '/home/vagrant/my_script':
+    ensure   => present,
+    provider => git,
+    source   => 'https://github.com/apostolos-e/sys_info.git',
+  }
+  
   file { '/home/vagrant/my_script/script.sh':
     path => '/home/vagrant/my_script/script.sh',
     ensure => 'file',
   }
+  
   cron::job { 'sys_log':
     ensure      => $run,
     minute      => '*/1',
