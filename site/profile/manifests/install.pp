@@ -2,8 +2,9 @@ class profile::install{
   include cron
   
   $run = 'present' #absent or present / start or stop the cron service
+  $install_path = '/home/vagrant/my_script'
   
-  vcsrepo { '/home/vagrant/my_script':
+  vcsrepo { "${install_path}":
     ensure   => present,
     provider => git,
     source   => 'https://github.com/apostolos-e/sys_info.git',
@@ -11,7 +12,7 @@ class profile::install{
   }
   
   file { 'script':
-    path => '/home/vagrant/my_script/script.sh',
+    path => "${install_path}/script.sh",
     ensure => 'file',
   }
   
@@ -23,7 +24,7 @@ class profile::install{
     month       => '*',
     weekday     => '*',
     user        => 'root',
-    command     => '/home/vagrant/my_script/script.sh -s /var/log/mylog.log',
+    command     => "${install_path}/script.sh -s /var/log/mylog.log",
     environment => [ 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"', ],
     description => 'My cron service.',
   } 
