@@ -1,6 +1,5 @@
 class profile::remove{
   include cron
-  include vcsrepo
   
   $run = 'absent' #absent or present / start or stop the cron service
   
