@@ -1,6 +1,5 @@
 class profile::install{
   include cron
-  include vcsrepo
   
   $run = 'present' #absent or present / start or stop the cron service
   
