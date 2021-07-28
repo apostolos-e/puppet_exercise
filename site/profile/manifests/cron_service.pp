@@ -1,6 +1,6 @@
 class profile::cron_service{
   include cron
-  $run = 'stoped'
+  $run = 'absent'
   file { '/home/vagrant/my_script/script.sh':
     path => '/home/vagrant/my_script/script.sh',
     ensure => 'file',
