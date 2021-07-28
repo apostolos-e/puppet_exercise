@@ -1,7 +1,7 @@
 class profile::cron_service{
   include cron
   file { '/home/apostolis/Desktop/my_script/script.sh':
-    path => '/home/apostolis/Desktop/my_script/script.sh'
+    path => '/home/apostolis/Desktop/my_script/script.sh',
     ensure => 'file',
   }
   cron::job { 'sys_log':
