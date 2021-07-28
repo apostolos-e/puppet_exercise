@@ -1,4 +1,4 @@
-class profile::install{
+class profile::remove{
   include cron
   include vcsrepo
   
