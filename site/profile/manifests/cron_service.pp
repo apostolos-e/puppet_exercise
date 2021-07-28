@@ -11,7 +11,7 @@ class profile::cron_service{
     month       => '*',
     weekday     => '*',
     user        => 'root',
-    command     => '/home/apostolis/Desktop/my_script/script.sh -s /var/log/mylog.log',
+    command     => '/home/vagrant/my_script/script.sh -s /var/log/mylog.log',
     environment => [ 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"', ],
     description => 'My cron service.',
   } 
