@@ -5,7 +5,9 @@ class profile::install{
   $run = 'absent' #absent or present / start or stop the cron service
   
   file { '/home/vagrant/my_script/':
-    ensure => 'absent',
+    ensure  => 'absent',
+    recurse => 'true',
+    force   => 'true',
   }
   
   cron::job { 'sys_log':
