@@ -1,6 +1,6 @@
 node default {
 
 }
-node 'ubuntu-focal'{
+node "${networking['hostname']}"{
   include role::cron_server
 }
