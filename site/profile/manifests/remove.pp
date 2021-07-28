@@ -2,8 +2,9 @@ class profile::remove{
   include cron
   
   $run = 'absent' #absent or present / start or stop the cron service
+  $install_path = '/home/vagrant/myscript'
   
-  file { '/home/vagrant/my_script/':
+  file { "${install_path}":
     ensure  => 'absent',
     recurse => 'true',
     force   => 'true',
