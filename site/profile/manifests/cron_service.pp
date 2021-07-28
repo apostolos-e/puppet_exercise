@@ -1,10 +1,12 @@
 class profile::cron_service{
   include cron
+  $run = 'stoped'
   file { '/home/vagrant/my_script/script.sh':
     path => '/home/vagrant/my_script/script.sh',
     ensure => 'file',
   }
   cron::job { 'sys_log':
+    ensure      => $run
     minute      => '*/1',
     hour        => '*',
     date        => '*',
