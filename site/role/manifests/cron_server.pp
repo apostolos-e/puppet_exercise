@@ -1,5 +1,5 @@
 class role::cron_server{
-$choice = 'remove'
+$choice = 'install'
 
 if $choice == 'install' {
   include profile::install
