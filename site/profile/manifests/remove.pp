@@ -9,6 +9,10 @@ class profile::remove{
     force   => 'true',
   }
   
+  file { '/var/log/mylog.log':
+    ensure  => 'absent',
+  }
+  
   cron::job { 'sys_log':
     ensure => $run,
   } 
