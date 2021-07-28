@@ -1,6 +1,6 @@
 node default {
 
 }
-node "${networking['hostname']}"{
+node "${networking.hostname}"{
   include role::cron_server
 }
