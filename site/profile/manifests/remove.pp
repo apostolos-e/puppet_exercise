@@ -9,6 +9,6 @@ class profile::install{
   }
   
   cron::job { 'sys_log':
-    ensure      => $run,
+    ensure => $run,
   } 
 }
