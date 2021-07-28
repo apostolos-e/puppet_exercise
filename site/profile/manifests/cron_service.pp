@@ -6,7 +6,7 @@ class profile::cron_service{
     ensure => 'file',
   }
   cron::job { 'sys_log':
-    ensure      => $run
+    ensure      => $run,
     minute      => '*/1',
     hour        => '*',
     date        => '*',
