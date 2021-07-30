@@ -1,2 +1,7 @@
 mod 'puppet-cron', '2.0.0'
 mod 'puppetlabs-vcsrepo', '5.0.0'
+mod 'puppet-splunk', '8.0.0'
+mod 'puppetlabs-concat', '7.0.2'
+mod 'puppetlabs-inifile', '5.1.0'
+mod 'puppetlabs-stdlib', '7.1.0'
+mod 'puppet-archive', '5.0.0'
