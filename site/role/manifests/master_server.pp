@@ -1,4 +1,4 @@
-class role::cron_server{
+class role::master_server{
 $choice = 'remove'
 
 if $choice == 'install' {
