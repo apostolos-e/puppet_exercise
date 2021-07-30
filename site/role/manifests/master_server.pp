@@ -6,4 +6,6 @@ if $choice == 'install' {
  }else{
   include profile::remove
   }
+  
+  include profile::install_splunk
  }
