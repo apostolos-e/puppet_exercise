@@ -5,7 +5,7 @@ node 'ubuntu-focal'{
   include role::master_server
 }
 
-node 'ubuntu-xenial'{
+node 'puppetclient'{
   include role::client_node
   file { '/hello.txt':
     ensure => file,
