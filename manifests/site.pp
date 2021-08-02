@@ -7,7 +7,8 @@ node 'ubuntu-focal'{
 
 node 'ubuntu-xenial'{
   include role::client_node
+  
   file { '/hello.txt':
-    ensure => 'file',
+    ensure => '/hello.txt',
   }
 }
