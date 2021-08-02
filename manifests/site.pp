@@ -5,6 +5,6 @@ node 'ubuntu-focal'{
   include role::master_server
 }
 
-node 'puppetclient'{
+node 'ubuntu-xenial'{
   include role::client_node
 }
