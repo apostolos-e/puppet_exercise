@@ -1,5 +1,5 @@
 class role::client_node{
-
+ $my_splunk_server = 'ubuntu-focal'
   class { '::splunk::params':
     server => $my_splunk_server,
     version  => '6.6.8',
