@@ -7,6 +7,8 @@ class profile::splunk_forwarder{
     #version  => '7.1.2',
     #build    => 'a0c72a66db66',
     src_root => 'https://download.splunk.com',
+    reset_seeded_password => true,
+    password_hash    => '$6$QektizKpHlUUtCcn$dKbY7/582M9GwFVNDpR.kwXFEAo3nuPanUv0H1fTU4kyLksKRS4qASzic6K5Qn20KrsNc3LryLxZEgasgrM1N/',
   }
   
   include profile::splunk_forwarder  
@@ -17,5 +19,4 @@ class profile::splunk_forwarder{
   value   => 'puppetserver',
   tag     => 'splunk_forwarder'
  }
-
 }
