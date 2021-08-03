@@ -9,6 +9,6 @@ node 'ubuntu-xenial'{
   include role::client_node
   
   file { '/hello.txt':
-    ensure => present,
+    ensure => absent,
   }
 }
