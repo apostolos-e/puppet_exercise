@@ -17,4 +17,5 @@ class profile::splunk_forwarder{
   value   => 'puppetserver',
   tag     => 'splunk_forwarder'
  }
+
 }
