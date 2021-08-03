@@ -14,10 +14,10 @@ class profile::splunk_forwarder{
    password_hash    => '$6$QektizKpHlUUtCcn$dKbY7/582M9GwFVNDpR.kwXFEAo3nuPanUv0H1fTU4kyLksKRS4qASzic6K5Qn20KrsNc3LryLxZEgasgrM1N/',
   }  
   
-  @splunkforwarder_input { 'puppetserver-sourcetype':
-  section => 'monitor:///var/log/puppetlabs/puppetserver/puppetserver.log',
+  @splunkforwarder_input { 'my_monitor':
+  section => 'monitor:///var/log/my_log_forwarder.log',
   setting => 'sourcetype',
-  value   => 'puppetserver',
+  value   => 'my_forwarder_monitor',
   tag     => 'splunk_forwarder'
  }
 }
