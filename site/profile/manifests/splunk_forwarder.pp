@@ -9,7 +9,7 @@ class profile::splunk_forwarder{
     src_root => 'https://download.splunk.com',
   }
   
-  class {'splunk::splunk_forwarder':
+  class {'splunk::forwarder':
    seed_password => true,
    password_hash    => '$6$QektizKpHlUUtCcn$dKbY7/582M9GwFVNDpR.kwXFEAo3nuPanUv0H1fTU4kyLksKRS4qASzic6K5Qn20KrsNc3LryLxZEgasgrM1N/',
   }  
