@@ -14,13 +14,12 @@ class profile::splunk_forwarder{
    password_hash    => '$6$QektizKpHlUUtCcn$dKbY7/582M9GwFVNDpR.kwXFEAo3nuPanUv0H1fTU4kyLksKRS4qASzic6K5Qn20KrsNc3LryLxZEgasgrM1N/',
   }  
   
-  $inputs = hiera_hash(splunk::forwarder::inputs)
+  $inputs = lookup(splunk::forwarder::inputs)
 
-
-  @splunkforwarder_input { 'test_monitor':
-    section => 'monitor:///var/log/my_test_log.log',
-    setting => 'sourcetype',
-    value   => 'my_forwarder_monitor',
+  @splunkforwarder_input { $inputs['name']:
+    section => $inputs['section'],
+    setting => $inputs['setting'],
+    value   => $inputs['value'],
     tag     => 'splunk_forwarder'
    }
 }
