@@ -16,9 +16,9 @@ class profile::splunk_forwarder{
   
   $inputs = lookup(splunk::forwarder::inputs)
     @splunkforwarder_input { $inputs['name']:
-    section => $input['section'],
-    setting => $input.['setting'],
-    value   => $input.['value'],
+    section => $inputs['section'],
+    setting => $inputs['setting'],
+    value   => $inputs['value'],
     tag     => 'splunk_forwarder',
    }
 }
