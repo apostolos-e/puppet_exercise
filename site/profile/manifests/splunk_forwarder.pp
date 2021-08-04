@@ -21,6 +21,6 @@ class profile::splunk_forwarder{
     section => 'monitor:///var/log/my_test_log2.log',
     setting => 'sourcetype',
     value   => 'my_forwarder_monitor',
-    tag     => 'splunk_forwarder',
+    tag     => 'splunk_forwarder'
    }
 }
