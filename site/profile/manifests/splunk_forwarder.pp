@@ -14,7 +14,7 @@ class profile::splunk_forwarder{
    password_hash    => '$6$QektizKpHlUUtCcn$dKbY7/582M9GwFVNDpR.kwXFEAo3nuPanUv0H1fTU4kyLksKRS4qASzic6K5Qn20KrsNc3LryLxZEgasgrM1N/',
   }  
   
-  $inputs = lookup(splunk::forwarder::inputs)
+  $inputs = hiera_array(splunk::forwarder::inputs)
 
     @splunkforwarder_input { $inputs['name']:
     section => $inputs['section'],
