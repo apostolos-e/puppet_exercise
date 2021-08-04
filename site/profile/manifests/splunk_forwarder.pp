@@ -14,7 +14,7 @@ class profile::splunk_forwarder{
    password_hash    => '$6$QektizKpHlUUtCcn$dKbY7/582M9GwFVNDpR.kwXFEAo3nuPanUv0H1fTU4kyLksKRS4qASzic6K5Qn20KrsNc3LryLxZEgasgrM1N/',
   }  
   
-  splunk::forwarder::inputs.each | $input|{
+  lookup(splunk::forwarder::inputs).each | $input|{
     @splunkforwarder_input { $input['name']:
     section => $input['section'],
     setting => $input['setting'],
