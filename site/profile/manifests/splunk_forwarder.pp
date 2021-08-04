@@ -16,7 +16,8 @@ class profile::splunk_forwarder{
   
   $inputs = hiera_hash(splunk::forwarder::inputs)
 
-    @splunkforwarder_input { 'test_monitor2':
+
+  @splunkforwarder_input { 'test_monitor2':
     section => 'monitor:///var/log/my_test_log2.log',
     setting => 'sourcetype',
     value   => 'my_forwarder_monitor',
