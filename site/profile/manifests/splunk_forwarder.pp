@@ -15,16 +15,17 @@ class profile::splunk_forwarder{
   }  
   
   $inputs = lookup(splunk::forwarder::inputs)
-
-  $inputs['name'].each | String $name|{
-   $inputs['section'].each | String $section|{
-    @splunkforwarder_input { $name:
-      section => $section,
+ 
+  @splunkforwarder_input { 'my_monitor':
+      section => 'monitor:///var/log/my_test_log.log',
       setting => 'sourcetype',
       value   => 'my_forwarder_monitor',
       tag     => 'splunk_forwarder'
      }
-   }
-  }
- 
+      @splunkforwarder_input { 'my_monitor2':
+      section => 'monitor:///var/log/my_test_log2.log',
+      setting => 'sourcetype',
+      value   => 'my_forwarder_monitor',
+      tag     => 'splunk_forwarder'
+     }
 }
