@@ -15,10 +15,11 @@ class profile::splunk_forwarder{
   }  
   
   $inputs = lookup(splunk::forwarder::inputs)
-    @splunkforwarder_input { $inputs['name'][1]:
-    section => $inputs['section'][1],
-    setting => $inputs['setting'][1],
-    value   => $inputs['value'][1],
+
+    @splunkforwarder_input { $inputs['name']:
+    section => $inputs['section'],
+    setting => $inputs['setting'],
+    value   => $inputs['value'],
     tag     => 'splunk_forwarder',
    }
 }
