@@ -16,12 +16,4 @@ class profile::splunk_forwarder{
   
   $my_inputs = hiera('splunkforwarder_input', {})
   create_resources('@splunkforwarder_input', $my_inputs)
-  
-  @splunkforwarder_input { 'test':
-  section => 'monitor:///var/log/test.log',
-  setting => 'sourcetype',
-  value   => 'puppetserver',
-  tag     => 'splunk_forwarder'
-}
- 
 }
