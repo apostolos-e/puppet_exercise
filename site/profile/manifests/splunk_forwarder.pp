@@ -15,17 +15,12 @@ class profile::splunk_forwarder{
   }  
   
   $inputs = lookup(splunk::forwarder::inputs)
- 
-  @splunkforwarder_input { 'my_monitor':
+ $inputs['name'].each | $name| {
+  @splunkforwarder_input { $name:
       section => 'monitor:///var/log/my_test_log.log',
       setting => 'sourcetype',
       value   => 'my_forwarder_monitor',
       tag     => 'splunk_forwarder'
      }
-      @splunkforwarder_input { 'my_monitor2':
-      section => 'monitor:///var/log/my_test_log2.log',
-      setting => 'sourcetype',
-      value   => 'my_forwarder_monitor',
-      tag     => 'splunk_forwarder'
-     }
+    }
 }
