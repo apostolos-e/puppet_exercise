@@ -15,12 +15,7 @@ class profile::splunk_forwarder{
   }  
   
   $inputs = lookup(splunk::forwarder::inputs)
- $inputs['name','section'].each | $name, $section| {
-  @splunkforwarder_input { $name:
-      section => $section,
-      setting => 'sourcetype',
-      value   => 'my_forwarder_monitor',
-      tag     => 'splunk_forwarder'
-     }
-    }
+  $my_inputs = hiera('@splunkforwarder_input', {})
+  create_resources('@splunkforwarder_input', $my_inputs)
+ 
 }
