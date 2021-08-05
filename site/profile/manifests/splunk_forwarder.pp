@@ -15,7 +15,7 @@ class profile::splunk_forwarder{
   }  
   
   #$inputs = lookup(splunk::forwarder::inputs)
-  $my_inputs = hiera('@splunkforwarder_input', {})
+  $my_inputs = hiera('splunkforwarder_input', {})
   create_resources('@splunkforwarder_input', $my_inputs)
  
 }
