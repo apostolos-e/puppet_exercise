@@ -8,7 +8,7 @@ class profile::splunk_forwarder{
     #build    => 'a0c72a66db66',
     version  => '8.1.5',
     build    => '9c0c082e4596',
-    src_root => 'https://download.splunk.com',
+    #src_root => 'https://download.splunk.com',
   }
   
   class {'splunk::forwarder':
